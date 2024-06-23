@@ -19,7 +19,7 @@ async function Page() {
           action={async () => {
             "use server";
             await signIn("github", {
-              redirectTo: "/",
+              redirectTo: "/dashboard",
             });
           }}
         >
