@@ -1,8 +1,11 @@
-import { text, sqliteTable } from "drizzle-orm/sqlite-core";
-const users = sqliteTable("users", {
-  id: text("id").primaryKey().notNull(),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
+import { pgTableCreator, serial, varchar } from 'drizzle-orm/pg-core';
+
+export const createTable = pgTableCreator((name) => `auth_workflow_${name}`);
+
+const users = createTable('users', {
+  id: serial('id').primaryKey().notNull(),
+  name: varchar('name', { length: 265 }).notNull(),
+  email: varchar('email', { length: 265 }).notNull(),
 });
 
 export { users };

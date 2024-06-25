@@ -1,9 +1,6 @@
-import { drizzle } from "drizzle-orm/better-sqlite3";
-import Database from "better-sqlite3";
-
-const sqlite = new Database("sqlite.db");
-
-import * as schema from "./schema";
-const db = drizzle(sqlite, { schema });
+import { drizzle } from 'drizzle-orm/vercel-postgres';
+import { sql } from '@vercel/postgres';
+import * as schema from './schema';
+const db = drizzle(sql, { schema });
 
 export { db };

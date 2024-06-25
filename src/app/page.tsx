@@ -1,14 +1,17 @@
-import Link from "next/link";
-import { signOut } from "~/auth";
-import SignedIn from "~/components/auth/SignedIn";
-import SignedOut from "~/components/auth/SignedOut";
-import { Button, buttonVariants } from "~/components/ui/button";
+import Link from 'next/link';
+import { signOut } from '~/auth';
+import SignedIn from '~/components/auth/SignedIn';
+import SignedOut from '~/components/auth/SignedOut';
+import { Button, buttonVariants } from '~/components/ui/button';
+import { db } from '~/db';
 
-export default function Home() {
+export default async function Home() {
   return (
-    <main className="container mx-auto py-12">
-      <h1 className="text-center text-4xl text-primary">Auth.js showdown.</h1>
-
+    <main className="container mx-auto space-y-5 py-12">
+      <h1 className="text-center text-4xl text-primary">Auth workflow.</h1>
+      <h2 className="text-center text-2xl text-primary">
+        Auth.js + drizzle + tanStack
+      </h2>
       <div className="flex w-full flex-col items-center justify-center py-12">
         <SignedOut>
           <Link href="/sign-in" className={buttonVariants()}>
@@ -21,7 +24,7 @@ export default function Home() {
 
           <form
             action={async () => {
-              "use server";
+              'use server';
               await signOut();
             }}
           >

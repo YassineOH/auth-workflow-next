@@ -1,10 +1,10 @@
-import { defineConfig } from "drizzle-kit";
-
-export default defineConfig({
-  dialect: "sqlite",
-  schema: "./src/db/schema.ts",
-  out: "./drizzle",
+import { type Config } from 'drizzle-kit';
+import '~/db/envConfig';
+export default {
+  schema: './src/db/schema.ts',
+  dialect: 'postgresql',
   dbCredentials: {
-    url: "./sqlite.db",
+    url: process.env.POSTGRES_URL!,
   },
-});
+  tablesFilter: ['auth_workflow_*'],
+} satisfies Config;
