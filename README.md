@@ -49,9 +49,12 @@ DATABASE_URL=your-vercel-postgres-database-url
 ```bash
 bun run dev
 ```
-Open http://localhost:3000 with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ##  Configuration
 Drizzle Configuration:
 
 The Drizzle configuration is set up to use a Vercel Postgres database by default. If you prefer to use a local database, update the drizzle.config.js file accordingly.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
