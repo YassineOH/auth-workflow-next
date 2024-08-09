@@ -4,7 +4,7 @@ import { buttonVariants } from '~/components/ui/button';
 
 function Page() {
   return (
-    <main className="w-ful container mx-auto flex h-screen items-center justify-center">
+    <main className="w-ful container mx-auto flex h-screen flex-col items-center justify-center gap-y-4">
       <h1 className="text-4xl font-bold text-primary">Dashboard</h1>
       <Link href="/" className={buttonVariants({ variant: 'outline' })}>
         Home

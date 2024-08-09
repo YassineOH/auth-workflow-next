@@ -20,16 +20,25 @@ export default async function Home() {
         </SignedOut>
 
         <SignedIn>
-          <h2>you&apos;re logged In</h2>
+          <div className="flex flex-col items-center justify-center gap-y-4">
+            <Link
+              href="/dashboard"
+              className={buttonVariants({ variant: 'outline' })}
+            >
+              go to dashboard
+            </Link>
 
-          <form
-            action={async () => {
-              'use server';
-              await signOut();
-            }}
-          >
-            <Button type="submit">logged out</Button>
-          </form>
+            <h2>you&apos;re logged In</h2>
+
+            <form
+              action={async () => {
+                'use server';
+                await signOut();
+              }}
+            >
+              <Button type="submit">logged out</Button>
+            </form>
+          </div>
         </SignedIn>
       </div>
     </main>
